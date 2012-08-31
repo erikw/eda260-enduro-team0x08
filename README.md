@@ -3,11 +3,9 @@ A project in the course [EDA260](http://cs.lth.se/eda260/) Software Development 
 
 More specifically each team had a on-site customer who wanted a time tracking system for the motorcycle race Enduro. In the end all the teams simulated a race and the software was tested in field.
 
-This is a dump form the last SVN revision and not a complete migration since the original server is down.
+This is a dump form the last SVN revision and not a complete migration since the original server is down. However a Gource visualization of the SVN repo is available at [Vimeo](http://vimeo.com/20217811).
 
 Our team was prodly awarded for good code quality and usage of Object Oriented patterns.
-
-A Gource visualization of the SVN repo is available at [Vimeo](http://vimeo.com/20217811).
 
 ## Team 0x08
 
