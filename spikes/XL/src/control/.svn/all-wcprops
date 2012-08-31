@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control
+END
+ExitListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/ExitListener.java
+END
+PrintMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/PrintMenuItem.java
+END
+SaveMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/SaveMenuItem.java
+END
+ClearAllMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/ClearAllMenuItem.java
+END
+FileMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/FileMenuItem.java
+END
+OpenMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/OpenMenuItem.java
+END
+Editor.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/Editor.java
+END
+CloseMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/CloseMenuItem.java
+END
+ClearMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/ClearMenuItem.java
+END
+WindowMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/WindowMenuItem.java
+END
+GuiCloser.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/GuiCloser.java
+END
+WindowMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/WindowMenu.java
+END
+NewMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/NewMenuItem.java
+END
+XLMenuBar.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/eda260-vt11-team08/!svn/ver/71/spikes/XL/src/control/XLMenuBar.java
+END

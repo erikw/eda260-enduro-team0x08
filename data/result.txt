@@ -1,0 +1,3 @@
+Place; StartNr; Namn; Totaltid; Starttid; Måltid
+1; 1; Anders Asson; --.--.--; Start?; Slut?
+2; 2; Berit Bsson; --.--.--; Start?; Slut?

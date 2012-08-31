@@ -1,0 +1,3 @@
+from project root:
+
+java -classpath lib/opencsv-2.2.jar:bin/ view/Gui

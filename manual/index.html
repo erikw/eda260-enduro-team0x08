@@ -1,0 +1,174 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<title>Manual Enduro - team08</title>
+</head>
+<body>
+<img src="img/logo-placeholder.jpg" alt=""/>
+<h1>Manual Enduro - team08</h1>
+Detta är manualen till programmet Enduro, ett tidtagningssystem för olika typer av Endurotävlingar som till exempel varvlopp, maratonlopp och etapplopp.
+Manualens syfte är att på ett adekvat sätt beskriva de olika komponenter som finns i systemet och hur de används.
+<!--
+<br>
+<br>
+<i><b>En bild på Charlie Parker indikerar att funktionaliteten som skall porträtteras inte är färdigimplementerad.</i></b>
+-->
+<ol>
+	<li><a href="#install">Installation</a></li>
+	<li><a href="#usage">Användning</a>
+		<ol>
+			<li><a href="#usage-conffile">Konfigurationsfil</a></li>
+			<li><a href="#usage-marathon">Maratonlopp</a><ol>
+				<li><a href="#usage-persons">Läs in deltagare från person-fil</a></li>
+				<li><a href="#usage-registerstart">Registrera starttid</a></li>
+				<li><a href="#usage-registerend">Registrera sluttid</a></li>
+				<li><a href="#usage-generateresult">Generera resultatfil</a></li>
+			</ol>
+			</li>
+			<li><a href="#usage-lap">Varvlopp</a></li>
+			<li><a href="#usage-stage">Etapplopp</a></li>
+
+		</ol>
+	</li>
+</ol>
+
+
+<h2>1. Installation<a name="install"></a></h2>
+<p>
+Alla operativsystem:
+För att installera programmet så extraherar du helt enkelt mappen Enduro i Enduro.zip till den plats du vill köra programmet ifrån. Sen kan du börja använda det på en gång. Användningen av programmet beskrivs i avsnitt 2. Datorn som ska köra systemet förutsätts ha Java >=1.5 och en systemklocka som är korrekt inställd i förhållande till den tidszon som tävlingen körs i. Stöd för tävlingar mellan olika tidszoner finns ej. 
+</p>
+<a href="javascript:history.back()">Tillbaka</a>
+<hr />
+<h2>2. Användning<a name="usage"></a></h2>
+<p>
+För att starta programmet dubbelklickar du helt enkelt på .jar-Filen som finns i Enduro-mappen. Då körs programmet enligt de parametrar som finns angivna i konfigurationsfilen. Hur du manipulerar konfigurationsfilen beskrivs i avsnitt 2.1. Det är i konfigurationsfilen du väljer vilken typ av
+tävling som skall köras. För varje typ av tävling finns ett användargränssnitt, dessa beskrivs i avsnitt 2.2, 2.3 och 2.4.
+
+Observera att om registeringen av starttider och måltider in i filer skall fungera så får ni tricksa ett lite grann genom att registrera dummystarttider och dummysluttider. Då kommer filerna uppdatera sig  och därmed laddas in tabellen vid nästa körning (uppdateringen sker lite sporadiskt).
+
+Registering med skitig nummerplåt fungerar inte heller helt adekvat. Att editera ett blankt startnummer i tabellen orsakar inte att det nya startnumret sparas i start/sluttidsfilerna. Detta kan dock göras manuellt vid behov.
+<br>
+<br>
+I konfigurationsfilen kan du också välja att starta sorteringsprogrammet för respektive tävlingstyp.
+Sorteringsprogrammet tar varje enskild resultatfil som skapats av funktionärer på olika stationer, sätter ihop dem och sorterar slutresultatet. Sorteringsprogrammet används genom konfigurationsfil, detta beskrivs närmare i avsnitt 2.5.
+<br>
+<a href="javascript:history.back()">Tillbaka</a>
+</p>
+	<h3>2.1 Konfigurationsfil<a name="usage-conffile"></a></h3>
+<blockquote>
+	Finns inte än!
+	<br>
+	<a href="javascript:history.back()">Tillbaka</a>
+</blockquote>
+	<h3>2.2. Maratonlopp<a name="usage-marathon"></a></h3>
+<blockquote>
+	<p>
+	<img src="img/guiMarathonMain.png" width="300" alt="" /><br>
+	Fig 2.2.1 - Huvudvy för maratonlopp
+	<br>
+	<br>
+	Om du startar programmet i läget Maratonlopp visas ett fönster med knapparna "Deltagare","Starttid","Sluttid" och "Generera Resultat" visas. Se bild ovan.
+	Du har möjlighet att starta 4 olika delprogram genom att klicka på motsvarande knapp. De olika delprogrammen beskrivs nedan.
+
+	<ul>
+		<li>Deltagare - I detta delprogram kan du registera alla deltagare som skall vara med i tävlingen, beskrivs i avsnitt 2.1.</li>
+		<li>Starttid - I detta delprogram kan du registera starttider för olika deltagare och även sätta upp en masstart, beskrivs i avsnitt 2.2.</li>
+		<li>Sluttid - I detta delprogram kan du registera sluttider för olika deltagare, beskrivs i avsnitt 2.3.</li>
+		<li>Generera resultat - I detta delprogram kan du generera en resultatfil från en starttidsfil och en sluttidsfil, beskrivs i avsnitt 2.4.</li>
+	</ul>
+	<a href="javascript:history.back()">Tillbaka</a>
+	</p>
+	<h4>2.2.1. Läs in deltagare från person-fil<a name="usage-persons"></a></h3>
+	<blockquote>
+	<p>
+	Finns inte än!
+	<br>
+	<a href="javascript:history.back()">Tillbaka</a>
+	</p>
+	</blockquote>
+	<h4>2.2.2. Registrera starttid<a name="usage-registerstart"></a></h3>
+	<blockquote>
+	<p>
+	<img src="img/guiRegisterStart.png" width="300" alt=""/><br>
+
+	Fig 2.2.2.1 - Initialt startfönster<br><br>
+
+	I detta fönster har du möjlighet att registrera starttider för olika startnummer. Det fungerar
+	på följande vis.
+
+	<ol>
+		<li>Klicka i "Start Nr." fältet</li>
+		<li>Skriv in startnumret, om det inte finns tillgängligt för tillfället kan du till exempel lämna det blankt.</li>
+		<li>Klicka på "Registrera" knappen</li>
+	</ol>
+
+	Du får nu följande vy:<br><br>
+	<img src="img/guiTimeReged.png" width="300" alt="" /><br>
+	Fig 2.2.2.2 - En tid registrerad<br><br>
+
+	Om du så behagar kan du nu ta bort en registrerad tid genom följande enkla kommandon.
+	<ol>
+		<li>Dubbelklicka på "XXXX" på den rad du vill ta bort.</li>
+		<li>Välj det alternativ som reflekterar din preferens.</li>
+	</ol>
+
+	<img src="img/guiRemoveTime.png" width="300" alt="" /><br>
+	Fig 2.2.2.3 - Borttagning av registerad tid<br><br>
+	</p>
+
+	<p>
+	<!--
+	Du kan även registrera flera starttider på en gång, du gör då på följande sätt:
+
+	<ol>
+		<li>Klicka på "Masstart"</li>
+	</ol>
+	<img src="img/placeholder.jpg" width="300" alt="" /><br>
+	Fig 2.2.2.4 - Dialogruta vid masstart<br><br>
+	Nu öppnas en dialogruta med ett textfält i. Du kan nu skriva in deltagarnas startnummer enligt syntaxen som beskrivs med ett exempel nedan.
+	<br><br>
+	"10-100,105,107,1337-1338" betyder startnummer 10 till 100, startnummer 105, startnummer 107 och startnummer 1337 till 1338.
+
+	<ol start=2>
+		<li>Fyll i de startnummer som önskas enligt ovan beskrivet syntax.</li>
+		<li>Klicka på "Ok" eller "Avbryt"</li>
+	</ol>
+	<a href="javascript:history.back()">Tillbaka</a>
+	-->
+	</p>
+	</blockquote>
+	<h4>2.2.3. Registrera sluttid<a name="usage-registerend"></a></h3>
+	<blockquote>
+	<p>
+	Att registera en sluttid är helt analogt med att registera en starttid, det enda som skiljer sig är namnen på kolumnerna i tabellen och att masstart saknas.
+	<br>
+	<a href="javascript:history.back()">Tillbaka</a>
+	</p>
+	</blockquote>
+	<h4>2.2.4. Generera resultatfil<a name="usage-generateresult"></a></h3>
+	<blockquote>
+	<p>
+	För att generera en resultatfil så klickar du helt enkelt på knappen "Generera resultat" enligt fig 2.2.1. Du kommer då få en fil "resultat.txt" i din Enduro-mapp. Denna kan senare användas i sorteringsprogrammet.
+	<br>
+	<a href="javascript:history.back()">Tillbaka</a>
+	</p>
+	</blockquote>
+</blockquote>
+<h3>2.3 Varvlopp<a name="usage-lap"></a></h3>
+	<blockquote>
+		För varvloppstävlingar är registreringsproceduren identisk med den för maratonlopp med skillnaden att den första tiden - starttiden - registreras via knappen Starttid (se fig 2.2.1). Alla påföljande tidsregistreringar sker via knappen Måltid (se fig 2.2.1).
+		<br>
+		<a href="javascript:history.back()">Tillbaka</a>
+	</blockquote>
+	<h3>2.4 Etapplopp<a name="usage-stage"></a></h3>
+	<blockquote>
+		OBS! Fullt stöd i GUI finns ej.
+		I gui't finns stöd för att generera en resultatfil utifrån start och måltider. Det går dock inte att registera förare för en viss etapp.
+		<br>
+		<a href="javascript:history.back()">Tillbaka</a>
+	</blockquote>
+	
+</body>
+</html>

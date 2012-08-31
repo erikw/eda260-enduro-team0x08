@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="XL" basedir="." default="release">
+	<description>
+		A spreedsheet program that is awesome.
+	</description>
+
+	<!-- *** Global Variables *** -->
+	<property name="project.name" value="XL" />
+	<property name="project.authors" value="Sara Gustafzelius, Anton Klaren, Jonas Klauber, Tobias Magnusson, Erik Nyalnder, Michal Sadowski, Miriam Tisander and Erik Westrup" />
+	<property name="path.source" value="src" />
+	<property name="path.destination" value="bin" />
+	<property name="path.library" value="lib" />
+	<property name="path.documentation" value="doc" />
+	<property name="path.report" value="report" />
+	<property name="path.release" value="release" />
+	<property name="project.svnver" value="svn.properties" />
+
+	<!-- Library versions i use. -->
+	<property name="opencsv" value="opencsv-2.2.jar" />
+	<property name="junit" value="junit-4.9b2.jar" />
+
+	<!-- *** Paths *** -->
+	<path id="externalLibs">
+		<fileset dir="${path.library}">
+			<include name="${opencsv}"/>
+			<include name="${junit}"/>
+			<!-- <include name="**/*.jar" /> -->
+		</fileset>
+	</path>
+
+	<path id="classpath.tests">
+		<pathelement location="${path.destination}"/>
+		<!-- <pathelement location="/usr/share/java/junit4.jar" /> -->
+	</path>
+
+	<!-- *** Targets *** -->
+
+	<target name="compile" depends="clean" description="Compile the sources to the destination.">
+		<mkdir dir="bin" /> 
+		<javac destdir="${path.destination}">
+			<src path="${path.source}" />
+			<classpath refid="externalLibs" />
+			<!-- <classpath location="/usr/share/java/junit4.jar" /> -->
+		</javac>
+	</target>
+
+	<target name="release" depends="distribute,test" description="Make a full release." >
+		<echo message="A full release was successfully created!" />
+	</target>
+
+	<target name="distribute" depends="compile,svnrev,doc" description="Make a releaseable JAR.">
+		<mkdir dir="${path.release}" />
+		<property prefix="svn" file="svn.properties"/>
+		<property name="jarName" value="${path.release}/${project.name}-${svn.Revision}.jar" />
+		<delete file="${jarName}" />
+		<jar destfile="${jarName}" update="no" excludes="**/.svn/**">
+			<zipgroupfileset dir="${path.library}" includes="**/*.jar" /> 
+			<fileset dir="${path.documentation}" includes="**/*" />
+			<fileset dir="${path.destination}" includes="**/*.class" />
+			<fileset dir="." includes="runcommand.txt" />
+			<manifest>
+				<attribute name="Main-class" value="view/Gui" />
+				<!--	<attribute name="Class-Path" value="lib/${opencsv}" /> -->
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="clean">
+		<delete dir="${path.destination}" /> 
+		<delete dir="$path.documentation}" />
+		<delete dir="${path.report}" />
+		<delete file="${project.svnver}" />
+	</target>
+
+	<target name="test" description="Run JUnit tests and stop build if one fails.">
+		<mkdir dir="${path.report}"/>
+		<junit printsummary="true" fork="yes" haltonfailure="true">
+			<formatter type="xml"/>
+			<classpath refid="classpath.tests"/>
+			<classpath refid="externalLibs" />
+			<batchtest todir="${path.report}">
+				<fileset dir="${path.destination}/" includes="testpkg/Test*.class" />
+			</batchtest>
+			<!-- <test name="testpkg.TestA"/>   -->
+		</junit>
+	</target>
+
+	<target name="doc" description="Generate javadocs from sourcefiles">
+		<mkdir dir="${path.documentation}" />
+		<javadoc destdir="${path.documentation}" author="true" version="true" use="true" doctitle="${project.name} Documentation" windowtitle="${project.name} Documentation" bottom="Documentation produly presented by the authors ${project.authors}." encoding="UTF-8">
+		<fileset dir="${path.source}">
+			<include name="**/*.java" />
+				<exclude name="**/*Test*.java" />
+		</fileset>
+		<link href="http://download.oracle.com/javase/6/docs/api/" />
+	</javadoc>
+
+	</target>
+
+	<target name="svnrev" description="Write svn info to file.">
+		<exec executable="svn" output="${project.svnver}">
+			<arg value="info" />
+		</exec>
+		<property prefix="svn" file="svn.properties"/>
+		<echo message="Using SVN revision: ${svn.Revision}." />
+	</target>
+</project>

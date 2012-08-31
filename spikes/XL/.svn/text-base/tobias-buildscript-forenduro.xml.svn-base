@@ -1,0 +1,52 @@
+<project name="Enduro" default="jar" basedir=".">
+	<description>
+		Spike-build for the amazing Enduro-project
+	</description>
+	<property name="src" location="src" />
+	<property name="build" location="build" />
+	<property name="jar" location="jar" />
+	
+	<path id="class.path">
+		<fileset dir="lib">
+		<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="init">
+		<tstamp />
+		<delete dir="${build}"/>
+    		<delete dir="${jar}"/>
+		<mkdir dir="${build}" />
+		<mkdir dir ="${jar}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${build}">
+		<classpath refid="class.path"/>
+		</javac>
+	</target>
+
+	<target name="test" depends="compile">
+		<junit haltonfailure="yes">
+			<classpath>
+      				<pathelement location="${build}/"/>
+      				<pathelement path="${java.class.path}"/>
+      				<fileset dir="lib">
+      					<include name="**/*.jar"/>
+      				</fileset>    
+    			</classpath>
+			<formatter type="brief" usefile="false" />
+			<batchtest>
+        			<fileset dir="${build}" includes="**/*Test*.class" />
+      			</batchtest>
+		</junit>
+	</target>
+
+	<target name="jar" depends="compile,test">
+		<jar destfile="${jar}/run.jar" basedir="${build}" includes="**/*.class">
+		<manifest>
+			<attribute name="Main-Class" value="gui.TestGui" />
+		</manifest>
+		</jar>
+	</target>
+</project>

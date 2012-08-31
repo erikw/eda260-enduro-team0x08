@@ -1,0 +1,133 @@
+-------------------------------------------------------------
+ Vilka paket och filer finns och vad är dess huvuduppgifter?:
+-------------------------------------------------------------
+
+* common
+	- EnduroTime - En representation av tider i programmet
+	- ErrorMessage - Klass som används för att visa när något blir fel och vad som gått snett
+	- StageTime - Datastruktur för att hålla tider för etapper
+	- Configuration - Statisk klass för att hantera konfigurations filen
+
+* driver
+	- AbstracDriver - En abstrakt klass för förare
+	- LapDriver - Subklass till AbstractDriver, förare för varvlopp
+	- MarathonDriver - Subklass till AbstractDriver, förare för maratonlopp
+	- StageDriver -  Subklass till AbstractDriver, förare för etapplopp
+
+* driver.factory
+	- DriverFactory - Interface för att skapa olika förare med Factory-mönstret
+	- LapFactory - Factory för att skapa varvloppsförare
+	- MarathonFactory - Factory för att skapa maratonloppsförare
+	- StageFactory - Factory för att skapa etapploppsförare
+	
+* generator
+	- AbstractGenerator - Abstrakt klass för att generera start-, finish- och resultat-filer
+	- LapGenerator - Klass för att generera filer för varvlopp
+	- MarathonGenerator - Klass för att generera filer för maratonlopp
+	- StageGenerator - Klass för att generera filer för etapplopp
+
+* generator.formatter
+	- Formatter - Abstrakt klass för att kunna skriva ut som både csv och html
+	- CSVFormatter - Formaterar i CSV
+	- HTMLFormatter - Formaterar i HTML
+
+* generator.sorter
+	- Sorter - Klass för att sortera förare i resultat-filen
+	- StartNumberSorter - Komparator för att kunna sortera förare på deras startnummer
+
+* gui
+	- MainView - Huvudvyn för programmet
+	- RegisterViewTemplate - Template för finish/start registreringsfönstrena
+	- RegisterStartTimeView - Vy för att registrera starttider för olika förare
+	- RegisterFinishTimeView -  Vy för att registrera finishtider för olika förare
+	- RegisterStartField - Textfält som används för att lägga in starttider i GUI:t, lyssnar efter enter-tryck
+	- MassStartDialog - Klass som haterar inläsningen av masstart
+	
+* gui.bottons
+	- AbstractMainViewButton - Abstrakt klass för knapparna på MainView
+	- AbstratRegisterViewButton - Abstrakt klass för knapparna på RegisterStartTimeView/RegisterFinishTimeView
+
+* model
+	- Model - Datastruktur som håller reda på olika förare
+
+* parser
+	- AbstractParser - Abstrakt klass för parserklasserna
+	- FinishParser - Klass för att parsa finish-filer
+	- StartParser - Klass för att parsa start-filer
+	- PersonParser - Klass för att parsa namn-/informationsfiler
+
+* test
+	- TestConfig - Testklass som testar konfigurationsfilen
+	- TestDriverClasses - Testklass för förare av olika klasser(senior, junior, etc.)
+	- TestEnduroTime - Testklass för EnduroTime
+	- TestErrorMessage - Testklass för ErrorMessage
+	- TestFormatter - Testklass för Formatter
+	- TestLapDriver - Testklass för LapDriver
+	- TestMarathonDriver - Testklass för MarathonDriver
+	- TestMarathonGenerator - Testklass för MarathonGenerator
+	- TestModel - Testklass för Model
+	- TestParser - Testklass för parser-klasserna
+	- TestSorter - Testklass för Sorter
+	- TestStageDriver - Testklass för StageDriver
+	- TestStageGenerator - Testklass för StageGenerator
+	- TestStageTime - Testklass för StageTime
+	
+* test.acceptance
+	- TestAcceptance10 - Acceptanstest10
+	- TestAcceptance11- Acceptanstest11
+	- TestAcceptance13 - Acceptanstest13
+	- TestAcceptance19b - Acceptanstest19b
+	- TestAcceptance20 - Acceptanstest20
+	- TestAcceptance21 - Acceptanstest21
+	- TestAcceptance22 - Acceptanstest22
+	- TestAcceptance23a - Acceptanstest23a
+	- TestAcceptance5 - Acceptanstest5
+	- TestAcceptance6 - Acceptanstest6
+	- TestAcceptance9 - Acceptanstest9
+	- TestEtapploppFullt - Acceptanstest för fullt etaplopp
+	- TestVarvloppFullt - Acceptanstest för fullt varvlopp
+
+* test.gui
+	- TestGUI - Testklass för GUI:t
+	- TestGuiRegister - Testklass för registrering i GUI:t
+	- TestGUIWithNoFiles - Testklass för GUIn när inga filer finns
+	
+* test.mocks
+	- MockSorter - Mockobjekt som används i Acceptanstest10
+---------------------------------------------------------------------------------------------------
+ Hur samverkar de?:
+-------------------
+Modellen tillsammans med alla drivers utgör kärnan av programmet. Dessa skickas sedan runt
+till de andra klasserna som skriver respektive läser ifrån modellen.
+
+Parser'n läser ifrån filer och lägger in datan i modellen.
+
+Generatorn läaser ifrån modellen och skriver till fil.
+
+Gui:n använder alla ovanstående klasser.
+
+-------------------------------------------------
+Hur kan programmen distruberas på olika datorer?:
+-------------------------------------------------
+Programmet existerar i from av en .jar fil och kan köras på alla datorer med en kompitable
+java-motor. Vid ett loop måste en "enduro.config" fil distrubieras till samtliga datorer
+som ska användas under loppet så att dessa har matchande inställningar.
+
+Programmet har alla funktioner som krävs för att både registerar start och sluttider
+samt generera resultat filer i olika format.
+
+-------------------------------------------------
+Architekturel Design
+-------------------------------------------------
+Kort arkitekturell beskrivning:
+
+Den grundläggande arkitekturen för systemet är en "pipe-filter" arkitektur. 
+Data genereras genom registering av starttider respektive måltider, dessa genereras på ett identiskt sätt. Datan registeras för ett 
+specifikt startnummer som i genereringssteget länkas ihop med personuppgifter från en given fil. I genereringssteget skapas en sorterad 
+resultatlista som innehåller all relevant information som tex Varvtider, Starttider, Totaltider och klassindelning.
+
+För att representera de olika varvtyperna {marathon, varv, etapp}-lopp finns det olika deltagarklasser med olika funktionalitet namngivna med syntaxen XDriver där X är en teckensträng.
+För alla deltagarklasser finns en motsvarande generator namngiven på motsvarande sätt.
+
+Programmet startas enligt de parametrar som finns angivna i konfigurationsfilen, dessa bestämmer vilken uppsättning av objekt som kommer att skapas och användas.
+

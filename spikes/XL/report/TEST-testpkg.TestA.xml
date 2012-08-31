@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="inglewood.westnet" name="testpkg.TestA" tests="1" time="0.122" timestamp="2011-01-30T15:35:12">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.management.compiler" value="HotSpot Tiered Compilers" />
+    <property name="path.documentation" value="doc" />
+    <property name="os.name" value="Linux" />
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/resources.jar:/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/rt.jar:/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/jsse.jar:/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/jce.jar:/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/charsets.jar:/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/modules/jdk.boot.jar:/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/classes" />
+    <property name="path.release" value="release" />
+    <property name="opencsv" value="opencsv-2.2.jar" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="ant.home" value="/usr/share/ant" />
+    <property name="java.runtime.version" value="1.6.0_23-b05" />
+    <property name="path.source" value="src" />
+    <property name="user.name" value="erikw" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/i386" />
+    <property name="ant.project.name" value="XL" />
+    <property name="java.version" value="1.6.0_23" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="32" />
+    <property name="project.svnver" value="svn.properties" />
+    <property name="path.report" value="report" />
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="50.0" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="/home/erikw/.hidden/Dropbox/lth/d2/programvaruutveckling_i_grupp/project/workspace/XL/build.xml" />
+    <property name="os.version" value="2.6.34.7-0.7-desktop" />
+    <property name="svn.Depth" value="immediates" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="19.0-b09" />
+    <property name="jarName" value="release/XL-74.jar" />
+    <property name="ant.library.dir" value="/usr/share/ant/lib" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="path.destination" value="bin" />
+    <property name="user.home" value="/home/erikw" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="project.authors" value="Sara Gustafzelius, Anton Klaren, Jonas Klauber, Tobias Magnusson, Erik Nyalnder, Michal Sadowski, Miriam Tisander and Erik Westrup" />
+    <property name="ant.file.XL" value="/home/erikw/.hidden/Dropbox/lth/d2/programvaruutveckling_i_grupp/project/workspace/XL/build.xml" />
+    <property name="java.library.path" value="/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/i386/server:/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/i386:/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/../lib/i386:/usr/java/packages/lib/i386:/lib:/usr/lib" />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="java.class.path" value="/home/erikw/.hidden/Dropbox/lth/d2/programvaruutveckling_i_grupp/project/workspace/XL/bin:/home/erikw/.hidden/Dropbox/lth/d2/programvaruutveckling_i_grupp/project/workspace/XL/lib/junit-4.9b2.jar:/home/erikw/.hidden/Dropbox/lth/d2/programvaruutveckling_i_grupp/project/workspace/XL/lib/opencsv-2.2.jar:/usr/share/java/junit-3.8.2.jar:/usr/share/java/ant-launcher-1.7.1.jar:/usr/share/java/ant-1.7.1.jar:/usr/share/java/ant/ant-junit-1.7.1.jar" />
+    <property name="ant.version" value="Apache Ant version 1.7.1 compiled on November 5 2010" />
+    <property name="svn.Repository" value="UUID: 47086280-ee19-4690-9e6c-98e38c9411a4" />
+    <property name="project.name" value="XL" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="java.io.tmpdir" value="/tmp" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+    <property name="svn.Revision" value="74" />
+    <property name="svn.Last" value="Changed Date: 2011-01-27 23:44:29 +0100 (Thu, 27 Jan 2011)" />
+    <property name="svn.Path" value="." />
+    <property name="os.arch" value="i386" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-1.6.0-sun-1.6.0/jre/lib/ext:/usr/java/packages/lib/ext" />
+    <property name="user.dir" value="/home/erikw/.hidden/Dropbox/lth/d2/programvaruutveckling_i_grupp/project/workspace/XL" />
+    <property name="line.separator" value="
+" />
+    <property name="java.vm.name" value="Java HotSpot(TM) Server VM" />
+    <property name="basedir" value="/home/erikw/.hidden/Dropbox/lth/d2/programvaruutveckling_i_grupp/project/workspace/XL" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="ant.core.lib" value="/usr/share/java/ant-1.7.1.jar" />
+    <property name="svn.Node" value="Kind: directory" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="svn.Schedule" value="normal" />
+    <property name="svn.URL" value="http://svn.cs.lth.se/svn/eda260-vt11-team08/spikes/XL" />
+    <property name="java.specification.version" value="1.6" />
+    <property name="junit" value="junit-4.9b2.jar" />
+  </properties>
+  <testcase classname="testpkg.TestA" name="testNothing" time="0.0010" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

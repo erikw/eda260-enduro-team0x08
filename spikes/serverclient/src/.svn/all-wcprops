@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/eda260-vt11-team08/!svn/ver/9/spikes/serverclient/src
+END
+SingleSocketServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/eda260-vt11-team08/!svn/ver/9/spikes/serverclient/src/SingleSocketServer.java
+END
+Server.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/eda260-vt11-team08/!svn/ver/8/spikes/serverclient/src/Server.java
+END
+SingleSocketMessageServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/eda260-vt11-team08/!svn/ver/9/spikes/serverclient/src/SingleSocketMessageServer.java
+END
+SocketClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/eda260-vt11-team08/!svn/ver/9/spikes/serverclient/src/SocketClient.java
+END
+MessageSocketClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/eda260-vt11-team08/!svn/ver/9/spikes/serverclient/src/MessageSocketClient.java
+END
+Client.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/eda260-vt11-team08/!svn/ver/8/spikes/serverclient/src/Client.java
+END
